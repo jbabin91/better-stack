@@ -1,19 +1,40 @@
 {
   "name": "better-stack",
   "private": true,
+  "type": "module",
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev",
-    "lint": "turbo lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier -uwl --cache .",
+    "format:check": "prettier -ucl --cache .",
+    "postinstall": "pnpm lint:ws",
+    "lint": "turbo lint --continue -- --max-warnings 0 --cache --cache-location node_modules/.cache/eslint/.eslintcache",
+    "lint:fix": "turbo lint --continue -- --fix --cache --cache-location node_modules/.cache/eslint/.eslintcache",
+    "lint:ws": "sherif",
+    "prepare": "husky",
+    "preview": "turbo preview",
+    "typecheck": "turbo typecheck"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-git"
+    }
   },
   "devDependencies": {
+    "@commitlint/config-conventional": "^19.6.0",
+    "@types/node": "^22.10.10",
+    "commitlint": "^19.6.1",
+    "cz-git": "^1.11.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.4.3",
     "prettier": "^3.4.2",
+    "prettier-plugin-packagejson": "^2.5.8",
+    "sherif": "^1.2.0",
     "turbo": "^2.3.4",
     "typescript": "5.7.3"
   },
-  "packageManager": "pnpm@9.0.0",
+  "packageManager": "pnpm@9.15.4",
   "engines": {
-    "node": ">=18"
+    "node": ">=22.13.1"
   }
 }
