@@ -24,7 +24,7 @@ const ContextMenuSubTrigger = React.forwardRef<
   <ContextMenuPrimitive.SubTrigger
     ref={ref}
     className={cn(
-      'focus:bg-accent focus:text-accent-foreground data-[state=open]:bg-accent data-[state=open]:text-accent-foreground flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none',
+      'focus:bg-accent focus:text-accent-foreground data-[state=open]:bg-accent data-[state=open]:text-accent-foreground rounded-xs outline-hidden flex cursor-default select-none items-center px-2 py-1.5 text-sm',
       inset && 'pl-8',
       className,
     )}
@@ -77,7 +77,7 @@ const ContextMenuItem = React.forwardRef<
   <ContextMenuPrimitive.Item
     ref={ref}
     className={cn(
-      'focus:bg-accent focus:text-accent-foreground relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
+      'focus:bg-accent focus:text-accent-foreground rounded-xs outline-hidden relative flex cursor-default select-none items-center px-2 py-1.5 text-sm data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
       inset && 'pl-8',
       className,
     )}
@@ -94,7 +94,7 @@ const ContextMenuCheckboxItem = React.forwardRef<
     ref={ref}
     checked={checked}
     className={cn(
-      'focus:bg-accent focus:text-accent-foreground relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
+      'focus:bg-accent focus:text-accent-foreground rounded-xs outline-hidden relative flex cursor-default select-none items-center py-1.5 pl-8 pr-2 text-sm data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
       className,
     )}
     {...props}
@@ -117,7 +117,7 @@ const ContextMenuRadioItem = React.forwardRef<
   <ContextMenuPrimitive.RadioItem
     ref={ref}
     className={cn(
-      'focus:bg-accent focus:text-accent-foreground relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
+      'focus:bg-accent focus:text-accent-foreground rounded-xs outline-hidden relative flex cursor-default select-none items-center py-1.5 pl-8 pr-2 text-sm data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
       className,
     )}
     {...props}
