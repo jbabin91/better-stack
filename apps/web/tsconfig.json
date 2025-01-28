@@ -1,6 +1,7 @@
 {
   "extends": "@repo/typescript-config/react-app.json",
   "compilerOptions": {
+    "types": ["vite/client"],
     "baseUrl": ".",
     "paths": {
       "@web/*": ["./src/*"]
