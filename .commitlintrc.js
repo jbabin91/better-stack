@@ -23,7 +23,7 @@ export default defineConfig({
     enableMultipleScopes: true,
     maxSubjectLength: 100,
     scopeEnumSeparator: ',',
-    skipQuestions: [],
+    skipQuestions: ['footer'],
     useEmoji: false,
   },
   rules: {
