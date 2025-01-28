@@ -6,6 +6,18 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 
 // https://vite.dev/config/
 export default defineConfig({
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          query: ['@tanstack/react-query'],
+          react: ['react', 'react-dom'],
+          router: ['@tanstack/react-router'],
+          ui: ['@repo/ui'],
+        },
+      },
+    },
+  },
   plugins: [
     tailwindcss(),
     TanStackRouterVite({
@@ -18,4 +30,7 @@ export default defineConfig({
     }),
     tsconfigPaths(),
   ],
+  preview: {
+    port: 5173,
+  },
 });

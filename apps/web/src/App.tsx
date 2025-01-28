@@ -1,5 +1,4 @@
-import '@web/App.css';
-
+import { Button, ModeToggle } from '@repo/ui';
 import reactLogo from '@web/assets/react.svg';
 import { useState } from 'react';
 
@@ -10,7 +9,7 @@ function App() {
 
   return (
     <>
-      <div>
+      <div className="flex justify-center">
         <a href="https://vite.dev" rel="noreferrer" target="_blank">
           <img alt="Vite logo" className="logo" src={viteLogo} />
         </a>
@@ -19,15 +18,18 @@ function App() {
         </a>
       </div>
       <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
+      <div className="p-[2em]">
+        <div className="flex justify-center space-x-2">
+          <Button onClick={() => setCount((count) => count + 1)}>
+            count is {count}
+          </Button>
+          <ModeToggle />
+        </div>
+        <p className="mt-4">
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
       </div>
-      <p className="read-the-docs">
+      <p className="text-[#888]">
         Click on the Vite and React logos to learn more
       </p>
     </>
