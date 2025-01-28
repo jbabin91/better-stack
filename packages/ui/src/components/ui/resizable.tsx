@@ -1,5 +1,5 @@
 import { cn } from '@ui/lib/utils';
-import { GripVertical } from 'lucide-react';
+import { LuGripVertical } from 'react-icons/lu';
 import * as ResizablePrimitive from 'react-resizable-panels';
 
 const ResizablePanelGroup = ({
@@ -33,7 +33,7 @@ const ResizableHandle = ({
   >
     {withHandle && (
       <div className="bg-border rounded-xs z-10 flex h-4 w-3 items-center justify-center border">
-        <GripVertical className="h-2.5 w-2.5" />
+        <LuGripVertical className="h-2.5 w-2.5" />
       </div>
     )}
   </ResizablePrimitive.PanelResizeHandle>
