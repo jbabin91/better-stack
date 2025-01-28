@@ -43,6 +43,10 @@ export * from './components/ui/toggle';
 export * from './components/ui/toggle-group';
 export * from './components/ui/tooltip';
 
+// Custom Components
+export * from './components/mode-toggle';
+export * from './components/theme-provider';
+
 // Hooks
 export * from './hooks/use-mobile';
 
