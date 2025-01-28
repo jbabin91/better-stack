@@ -21,6 +21,7 @@ export const config = tseslint.config(
       '**/dist/**',
       '**/storybook-static/**',
       '**/.turbo/**',
+      '**/*.gen.ts',
     ],
   },
   {
