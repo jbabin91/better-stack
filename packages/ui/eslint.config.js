@@ -11,4 +11,10 @@ export default [
       },
     },
   },
+  {
+    files: ['**/*.{jsx,tsx}'],
+    rules: {
+      'react/no-unknown-property': 'off',
+    },
+  },
 ];
