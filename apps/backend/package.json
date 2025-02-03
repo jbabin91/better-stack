@@ -1,0 +1,34 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "cf-typegen": "wrangler types --env-interface CloudflareBindings",
+    "deploy": "wrangler deploy --minify",
+    "dev": "wrangler dev",
+    "lint": "eslint .",
+    "setup": "bun scripts/setup.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "better-auth": "^1.1.15",
+    "drizzle-orm": "^0.39.1",
+    "hono": "^4.6.20"
+  },
+  "devDependencies": {
+    "@clack/prompts": "^0.9.1",
+    "@cloudflare/vitest-pool-workers": "^0.6.11",
+    "@cloudflare/workers-types": "^4.20250129.0",
+    "@repo/eslint-config": "workspace:^",
+    "@repo/typescript-config": "workspace:^",
+    "@types/bun": "^1.2.2",
+    "@types/node": "^22.13.0",
+    "better-sqlite3": "^11.8.1",
+    "bun": "^1.2.2",
+    "dotenv": "^16.4.7",
+    "drizzle-kit": "^0.30.4",
+    "vitest": "^3.0.5",
+    "wrangler": "^3.107.2"
+  }
+}
