@@ -20,8 +20,8 @@ jobs:
       - name: Setup and Install dependencies
         uses: ./.github/actions/setup
 
-      - name: Branch Checks
-        uses: ./.github/actions/branch-checks
-
       - name: Build All
         uses: ./.github/actions/build-all
+
+      - name: Branch Checks
+        uses: ./.github/actions/branch-checks
