@@ -21,11 +21,12 @@ export default defineConfig({
   plugins: [
     tailwindcss(),
     TanStackRouterVite({
+      autoCodeSplitting: true,
       semicolons: true,
     }),
     react({
       babel: {
-        plugins: ['babel-plugin-react-compiler'],
+        plugins: ['babel-plugin-react-compiler', '@legendapp/state/babel'],
       },
     }),
     tsconfigPaths(),

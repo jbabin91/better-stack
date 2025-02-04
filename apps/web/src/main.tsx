@@ -1,16 +1,21 @@
-import '@web/index.css';
+import '@web/styles/globals.css';
 import '@repo/ui/styles.css';
 
-import App from '@web/App.tsx';
+import { enableReactTracking } from '@legendapp/state/config/enableReactTracking';
+import { RouterProvider } from '@tanstack/react-router';
+import { router } from '@web/lib/router';
+import { Providers } from '@web/providers';
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 
-import { Providers } from './providers';
+enableReactTracking({
+  warnMissingUse: true,
+});
 
 createRoot(document.querySelector('#root')!).render(
   <StrictMode>
     <Providers>
-      <App />
+      <RouterProvider router={router} />
     </Providers>
   </StrictMode>,
 );
