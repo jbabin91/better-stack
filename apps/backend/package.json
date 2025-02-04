@@ -18,17 +18,17 @@
   },
   "devDependencies": {
     "@clack/prompts": "^0.9.1",
-    "@cloudflare/vitest-pool-workers": "^0.6.11",
+    "@cloudflare/vitest-pool-workers": "^0.6.12",
     "@cloudflare/workers-types": "^4.20250129.0",
     "@repo/eslint-config": "workspace:^",
     "@repo/typescript-config": "workspace:^",
     "@types/bun": "^1.2.2",
-    "@types/node": "^22.13.0",
+    "@types/node": "^22.13.1",
     "better-sqlite3": "^11.8.1",
     "bun": "^1.2.2",
     "dotenv": "^16.4.7",
     "drizzle-kit": "^0.30.4",
-    "vitest": "^3.0.5",
-    "wrangler": "^3.107.2"
+    "vitest": "2.1.8",
+    "wrangler": "^3.107.3"
   }
 }

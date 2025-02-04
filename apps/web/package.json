@@ -13,6 +13,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@legendapp/state": "3.0.0-beta.26",
     "@repo/ui": "workspace:^",
     "@tanstack/react-query": "^5.66.0",
     "@tanstack/react-router": "^1.99.0",
