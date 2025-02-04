@@ -1,4 +1,6 @@
 import js from '@eslint/js';
+import pluginQuery from '@tanstack/eslint-plugin-query';
+import pluginRouter from '@tanstack/eslint-plugin-router';
 import prettierConfig from 'eslint-config-prettier';
 import importX from 'eslint-plugin-import-x';
 import jsxA11y from 'eslint-plugin-jsx-a11y';
@@ -15,6 +17,8 @@ import tseslint from 'typescript-eslint';
 
 /** @type {import("typescript-eslint").Config} */
 export const config = tseslint.config(
+  ...pluginRouter.configs['flat/recommended'],
+  ...pluginQuery.configs['flat/recommended'],
   {
     ignores: [
       '**/node_modules/**',
