@@ -45,6 +45,7 @@ export * from './components/ui/tooltip';
 
 // Custom Components
 export * from './components/mode-toggle';
+export * from './components/spinner';
 export * from './components/theme-provider';
 
 // Hooks
