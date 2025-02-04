@@ -2,6 +2,8 @@ import js from '@eslint/js';
 import pluginQuery from '@tanstack/eslint-plugin-query';
 import pluginRouter from '@tanstack/eslint-plugin-router';
 import prettierConfig from 'eslint-config-prettier';
+// @ts-ignore
+import turboConfig from 'eslint-config-turbo/flat';
 import importX from 'eslint-plugin-import-x';
 import jsxA11y from 'eslint-plugin-jsx-a11y';
 import react from 'eslint-plugin-react';
@@ -142,5 +144,6 @@ export const config = tseslint.config(
     },
     settings: { react: { version: 'detect' } },
   },
+  ...turboConfig,
   prettierConfig,
 );

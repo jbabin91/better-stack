@@ -23,6 +23,9 @@ importers:
       cz-git:
         specifier: ^1.11.0
         version: 1.11.0
+      eslint:
+        specifier: ^9.19.0
+        version: 9.19.0(jiti@2.4.2)
       husky:
         specifier: ^9.1.7
         version: 9.1.7
