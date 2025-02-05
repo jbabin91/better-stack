@@ -41,4 +41,4 @@ COPY --from=installer /app .
 # Healthcheck
 HEALTHCHECK --interval=5s --timeout=5s --start-period=5s CMD curl --silent --fail http://localhost:3000 || exit 1
 
-CMD ["pnpm", "start:backend"]
+CMD ["pnpm", "--filter", "backend", "start"]
