@@ -1,9 +1,15 @@
 FROM imbios/bun-node:latest-jod-debian AS base
 RUN corepack enable && npm install -g corepack@latest
 
+# Install turbo
+RUN npm install -g turbo
+
 FROM base AS builder
 WORKDIR /app
 COPY . .
+
+# Install turbo
+RUN npm install -g turbo
 
 # Generate a partial monorepo with a pruned lockfile for a target workspace.
 # Assuming "backend" is the name entered in the project's package.json { name: "backend" }
