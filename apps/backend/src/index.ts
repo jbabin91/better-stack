@@ -1,9 +1,9 @@
-import { Hono } from 'hono';
+import { app } from '@backend/app';
+import { env } from '@backend/lib/env';
 
-const app = new Hono();
+const port = Number(env.PORT);
 
-app.get('/', (c) => {
-  return c.text('Hello Hono!');
-});
-
-export default app;
+export default {
+  fetch: app.fetch,
+  port,
+};

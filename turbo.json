@@ -17,6 +17,9 @@
     "clean": {
       "cache": false
     },
+    "db:generate": {},
+    "db:migrate": {},
+    "db:studio": {},
     "dev": {
       "cache": false,
       "persistent": true

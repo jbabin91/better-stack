@@ -1,0 +1,18 @@
+services:
+  db:
+    image: postgres:latest
+    container_name: better_stack_db
+    restart: always
+    environment:
+      POSTGRES_DB: db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    ports:
+      - 5432:5432
+    volumes:
+      - .container/db-data:/var/lib/postgresql/data
+    networks:
+      - better_stack_network
+
+networks:
+  better_stack_network:

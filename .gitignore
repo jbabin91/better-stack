@@ -126,3 +126,6 @@ storybook-static
 
 # Turbo
 .turbo
+
+# Docker
+.container/

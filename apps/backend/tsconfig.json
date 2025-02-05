@@ -1,7 +1,14 @@
 {
   "extends": "@repo/typescript-config/base.json",
   "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
     "jsx": "react-jsx",
-    "jsxImportSource": "hono/jsx"
+    "jsxImportSource": "hono/jsx",
+    "baseUrl": ".",
+    "paths": {
+      "@backend/*": ["./src/*"]
+    }
   }
 }

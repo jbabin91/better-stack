@@ -3,3 +3,5 @@ pnpm-lock.yaml
 .next
 
 *.gen.ts
+
+**/db/migrations/**

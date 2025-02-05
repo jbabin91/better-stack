@@ -11,4 +11,10 @@ export default [
       },
     },
   },
+  {
+    files: ['**/db/schema/**', '**/routes/**'],
+    rules: {
+      'sort-keys-fix/sort-keys-fix': 'off',
+    },
+  },
 ];
