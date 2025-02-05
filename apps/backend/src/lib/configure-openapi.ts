@@ -13,12 +13,6 @@ function configureOpenAPI(app: AppOpenAPI) {
       version: packageJSON.version,
     },
     openapi: '3.1.0',
-    servers: [
-      {
-        description: isProduction ? 'Production server' : 'Development server',
-        url: env.BASE_URL,
-      },
-    ],
   });
 
   app.get(
@@ -29,8 +23,16 @@ function configureOpenAPI(app: AppOpenAPI) {
         targetKey: 'javascript',
       },
       layout: 'classic',
+      servers: [
+        {
+          description: isProduction
+            ? 'Production server'
+            : 'Development server',
+          url: env.BASE_URL,
+        },
+      ],
       spec: {
-        url: '/openapi.json',
+        url: isProduction ? '/api/openapi.json' : '/openapi.json',
       },
       theme: 'kepler',
     }),
