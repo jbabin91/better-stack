@@ -19,8 +19,6 @@
     "lint:ws": "sherif",
     "prepare": "husky",
     "preview": "turbo preview",
-    "start": "turbo start",
-    "start:backend": "turbo start --filter backend",
     "typecheck": "turbo typecheck"
   },
   "config": {

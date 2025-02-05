@@ -33,11 +33,6 @@
       "cache": false,
       "persistent": true
     },
-    "start": {
-      "dependsOn": ["^start"],
-      "cache": false,
-      "persistent": true
-    },
     "typecheck": {
       "dependsOn": ["^typecheck"],
       "outputs": ["node_modules/.cache/typescript/*.tsbuildinfo"]
