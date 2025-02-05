@@ -9,9 +9,11 @@
     "build:web": "turbo build --filter web",
     "check-exports": "turbo check-exports",
     "clean": "turbo clean && rm -rf .turbo node_modules",
+    "db:down": "docker compose down",
     "db:generate": "turbo db:generate",
     "db:migrate": "turbo db:migrate",
     "db:studio": "turbo db:studio",
+    "db:up": "docker compose up -d",
     "dev": "turbo dev",
     "format": "prettier -uwl --cache .",
     "format:check": "prettier -uc --cache .",
@@ -22,6 +24,7 @@
     "lint:ws": "sherif",
     "prepare": "husky",
     "preview": "turbo preview",
+    "test": "turbo test",
     "typecheck": "turbo typecheck"
   },
   "config": {

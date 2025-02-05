@@ -1,20 +1,13 @@
 services:
   db:
     image: postgres:latest
-    container_name: better_stack_db
+    container_name: better_stack_test_db
     restart: always
     env_file:
-      - .env
+      - .env.test
     environment:
       POSTGRES_DB: ${POSTGRES_DB}
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     ports:
       - ${POSTGRES_PORT}:5432
-    volumes:
-      - .container/db-data:/var/lib/postgresql/data
-    networks:
-      - better_stack_network
-
-networks:
-  better_stack_network:

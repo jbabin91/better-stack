@@ -36,6 +36,7 @@
       "cache": false,
       "persistent": true
     },
+    "test": {},
     "typecheck": {
       "dependsOn": ["^typecheck"],
       "outputs": ["node_modules/.cache/typescript/*.tsbuildinfo"]

@@ -8,11 +8,15 @@
     "clean": "rm -rf .turbo dist node_modules",
     "db:generate": "bunx drizzle-kit generate --config drizzle.config.ts",
     "db:migrate": "bunx drizzle-kit migrate --config drizzle.config.ts",
+    "db:push": "bunx drizzle-kit push --config drizzle.config.ts",
     "db:studio": "bunx drizzle-kit studio --config drizzle.config.ts",
     "dev": "bun run --hot src/index.ts",
     "lint": "eslint .",
     "preview": "pnpm build && bun run dist/index.js",
     "start": "bun run dist/index.js",
+    "test": "bun test",
+    "test:db:down": "docker compose down",
+    "test:db:up": "docker compose up -d",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

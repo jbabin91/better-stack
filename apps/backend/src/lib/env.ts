@@ -7,8 +7,18 @@ const envSchema = z.object({
   BETTER_AUTH_SECRET: z.string(),
   BETTER_AUTH_URL: z.string().url(),
   DATABASE_URL: z.string().url(),
-  LOG_LEVEL: z.enum(['fatal', 'error', 'warn', 'info', 'debug', 'trace']),
-  NODE_ENV: z.enum(['development', 'production']).default('development'),
+  LOG_LEVEL: z.enum([
+    'fatal',
+    'error',
+    'warn',
+    'info',
+    'debug',
+    'trace',
+    'silent',
+  ]),
+  NODE_ENV: z
+    .enum(['development', 'production', 'test'])
+    .default('development'),
   PORT: z.coerce.number().default(3000),
 });
 

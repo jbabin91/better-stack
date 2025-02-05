@@ -3,6 +3,7 @@ import { createMessageObjectSchema } from 'stoker/openapi/schemas';
 
 export const ZOD_ERROR_MESSAGES = {
   EXPECTED_NUMBER: 'Expected number, received nan',
+  EXPECTED_UUID: 'Invalid uuid',
   NO_UPDATES: 'No updates provided',
   REQUIRED: 'Required',
 };
