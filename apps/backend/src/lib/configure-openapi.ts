@@ -4,22 +4,21 @@ import { apiReference } from '@scalar/hono-api-reference';
 
 import packageJSON from '../../package.json' with { type: 'json' };
 
+const isProduction = env.NODE_ENV === 'production';
+
 function configureOpenAPI(app: AppOpenAPI) {
-  const isProduction = env.NODE_ENV === 'production';
-
-  const servers: { description: string; url: string }[] = [];
-
-  servers.push({
-    description: isProduction ? 'Production server' : 'Development server',
-    url: env.BASE_URL,
-  });
-
-  app.doc('/doc', {
+  app.doc31('/openapi.json', {
     info: {
       title: 'Tasks API',
       version: packageJSON.version,
     },
-    openapi: '3.0.0',
+    openapi: '3.1.0',
+    servers: [
+      {
+        description: isProduction ? 'Production server' : 'Development server',
+        url: env.BASE_URL,
+      },
+    ],
   });
 
   app.get(
@@ -30,9 +29,8 @@ function configureOpenAPI(app: AppOpenAPI) {
         targetKey: 'javascript',
       },
       layout: 'classic',
-      servers: [...servers],
       spec: {
-        url: '/doc',
+        url: '/openapi.json',
       },
       theme: 'kepler',
     }),
