@@ -1,9 +1,6 @@
 FROM imbios/bun-node:latest-jod-debian AS base
 RUN corepack enable && npm install -g corepack@latest
 
-# Install turbo
-RUN npm install -g turbo
-
 FROM base AS builder
 WORKDIR /app
 COPY . .
