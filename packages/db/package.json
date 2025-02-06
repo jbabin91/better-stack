@@ -1,0 +1,48 @@
+{
+  "name": "@repo/db",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./schema": {
+      "types": "./dist/schema.d.ts",
+      "default": "./dist/schema.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./src/index.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prebuild": "rm -rf dist",
+    "build": "pnpm typecheck && tsup",
+    "build:package": "pnpm build",
+    "check-exports": "attw --pack . --profile esm-only --ignore-rules cjs-resolves-to-esm no-resolution",
+    "clean": "rm -rf .turbo dist node_modules",
+    "db:generate": "bunx drizzle-kit generate --config drizzle.config.ts",
+    "db:migrate": "bunx drizzle-kit migrate --config drizzle.config.ts",
+    "db:push": "bunx drizzle-kit push --config drizzle.config.ts",
+    "db:studio": "bunx drizzle-kit studio --config drizzle.config.ts",
+    "dev": "tsup --watch",
+    "lint": "eslint .",
+    "lint:package": "publint",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "drizzle-orm": "^0.39.2",
+    "drizzle-zod": "^0.7.0",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:^",
+    "@repo/typescript-config": "workspace:^",
+    "@types/pg": "^8.11.11",
+    "drizzle-kit": "^0.30.4",
+    "tsup": "^8.3.6"
+  }
+}

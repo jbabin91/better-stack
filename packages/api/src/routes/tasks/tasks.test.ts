@@ -1,13 +1,13 @@
 import { execSync } from 'node:child_process';
 
-import { ZOD_ERROR_CODES, ZOD_ERROR_MESSAGES } from '@backend/lib/constants';
-import { createApp } from '@backend/lib/create-app';
-import { env } from '@backend/lib/env';
 import { afterAll, beforeAll, describe, expect, it } from 'bun:test';
 import { testClient } from 'hono/testing';
 import * as HttpStatusPhrases from 'stoker/http-status-phrases';
 import { ZodIssueCode } from 'zod';
 
+import { ZOD_ERROR_CODES, ZOD_ERROR_MESSAGES } from '../../lib/constants';
+import { createApp } from '../../lib/create-app';
+import { env } from '../../lib/env';
 import { tasksRouter } from './tasks.index';
 
 if (env.NODE_ENV !== 'test') {

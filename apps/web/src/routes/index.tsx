@@ -5,6 +5,8 @@ import { syncObservable } from '@legendapp/state/sync';
 import { Button, ModeToggle } from '@repo/ui';
 import { createFileRoute } from '@tanstack/react-router';
 import reactLogo from '@web/assets/react.svg';
+import { apiClient } from '@web/lib/api-client';
+import { useEffect } from 'react';
 
 import viteLogo from '/vite.svg';
 
@@ -20,9 +22,27 @@ syncObservable(state$, {
   },
 });
 
+async function getMessage() {
+  const response = await apiClient.index.$get();
+  console.log(await response.json());
+}
+
+// const messageQueryOptions = queryOptions({
+//   queryKey: ['message'],
+//   queryFn:
+// });
+
+// function useMessage() {
+//   return useQuery({});
+// }
+
 const RouteComponent = observer(function RouteComponent() {
   const count = use$(state$.count);
   const doubleCount = use$(state$.doubleCount);
+
+  useEffect(() => {
+    getMessage();
+  }, []);
 
   return (
     <>

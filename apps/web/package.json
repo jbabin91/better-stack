@@ -14,9 +14,12 @@
   },
   "dependencies": {
     "@legendapp/state": "3.0.0-beta.26",
+    "@repo/api": "workspace:^",
+    "@repo/db": "workspace:^",
     "@repo/ui": "workspace:^",
     "@tanstack/react-query": "^5.66.0",
     "@tanstack/react-router": "^1.99.8",
+    "hono": "^4.6.20",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "zod": "^3.24.1"

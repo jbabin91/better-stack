@@ -20,3 +20,7 @@ export const insertTasksSchema = createInsertSchema(tasks, {
   name: z.string().min(1).max(500),
 });
 export const patchTasksSchema = insertTasksSchema.partial();
+
+export type Task = z.infer<typeof selectTasksSchema>;
+export type InsertTask = z.infer<typeof insertTasksSchema>;
+export type PatchTask = z.infer<typeof patchTasksSchema>;

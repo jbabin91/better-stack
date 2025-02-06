@@ -1,5 +1,4 @@
-import { createRouter } from '@backend/lib/create-app';
-
+import { createRouter } from '../../lib/create-app';
 import * as handlers from './tasks.handlers';
 import * as routes from './tasks.routes';
 

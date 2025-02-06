@@ -1,10 +1,11 @@
-import { type auth } from '@backend/lib/auth';
 import {
   type OpenAPIHono,
   type RouteConfig,
   type RouteHandler,
 } from '@hono/zod-openapi';
 import { type PinoLogger } from 'hono-pino';
+
+import { type auth } from '../lib/auth';
 
 export type AppBindings = {
   Variables: {
