@@ -3,10 +3,10 @@ import { ObservablePersistLocalStorage } from '@legendapp/state/persist-plugins/
 import { observer, use$ } from '@legendapp/state/react';
 import { syncObservable } from '@legendapp/state/sync';
 import { Button, ModeToggle } from '@repo/ui';
+import { queryOptions, useQuery } from '@tanstack/react-query';
 import { createFileRoute } from '@tanstack/react-router';
 import reactLogo from '@web/assets/react.svg';
-import { apiClient } from '@web/lib/api-client';
-import { useEffect } from 'react';
+import { apiClient, handleResponse } from '@web/lib/api-client';
 
 import viteLogo from '/vite.svg';
 
@@ -24,7 +24,21 @@ syncObservable(state$, {
 
 async function getMessage() {
   const response = await apiClient.index.$get();
-  console.log(await response.json());
+  const json = await handleResponse(response);
+  return json.message;
+}
+
+function getMessageQueryOptions() {
+  return queryOptions({
+    queryFn: getMessage,
+    queryKey: ['message'],
+  });
+}
+
+function useGetMessage() {
+  return useQuery({
+    ...getMessageQueryOptions(),
+  });
 }
 
 // const messageQueryOptions = queryOptions({
@@ -39,10 +53,7 @@ async function getMessage() {
 const RouteComponent = observer(function RouteComponent() {
   const count = use$(state$.count);
   const doubleCount = use$(state$.doubleCount);
-
-  useEffect(() => {
-    getMessage();
-  }, []);
+  const { data } = useGetMessage();
 
   return (
     <>
@@ -69,6 +80,9 @@ const RouteComponent = observer(function RouteComponent() {
         <p className="mt-4">
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
+      </div>
+      <div>
+        <p>Message: {data}</p>
       </div>
       <p className="text-[#888]">
         Click on the Vite and React logos to learn more
