@@ -5,29 +5,20 @@
   "type": "module",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "default": "./dist/index.js"
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
     },
     "./hc": {
-      "types": "./dist/hc.d.ts",
-      "default": "./dist/hc.js"
+      "types": "./src/hc.ts",
+      "default": "./src/hc.ts"
     }
   },
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
   "scripts": {
-    "prebuild": "rm -rf dist",
-    "build": "pnpm typecheck && tsup",
-    "build:package": "pnpm build",
-    "check-exports": "attw --pack . --profile esm-only --ignore-rules cjs-resolves-to-esm no-resolution",
     "clean": "rm -rf .turbo dist node_modules",
     "db:push": "bunx drizzle-kit push --config drizzle.config.ts",
-    "dev": "tsup --watch",
     "lint": "eslint .",
-    "lint:package": "publint",
     "test": "bun test",
     "test:db:down": "docker compose down",
     "test:db:up": "docker compose up -d",
