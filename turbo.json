@@ -1,7 +1,13 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "ui": "tui",
-  "globalEnv": ["NODE_ENV", "ACCOUNT_ID", "DATABASE_ID", "TOKEN"],
+  "globalEnv": [
+    "NODE_ENV",
+    "ACCOUNT_ID",
+    "DATABASE_ID",
+    "TOKEN",
+    "DATABASE_URL"
+  ],
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
