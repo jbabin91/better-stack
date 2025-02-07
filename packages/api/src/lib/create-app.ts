@@ -4,9 +4,9 @@ import { requestId } from 'hono/request-id';
 import { notFound, onError } from 'stoker/middlewares';
 import { defaultHook } from 'stoker/openapi';
 
+import { env } from '../configs/env';
 import { pinoLogger } from '../middleware/pino-logger';
 import { type AppBindings, type AppOpenAPI } from '../types';
-import { env } from './env';
 
 export function createRouter() {
   return new OpenAPIHono<AppBindings>({

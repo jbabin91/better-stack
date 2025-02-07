@@ -5,9 +5,9 @@ import { testClient } from 'hono/testing';
 import * as HttpStatusPhrases from 'stoker/http-status-phrases';
 import { ZodIssueCode } from 'zod';
 
+import { env } from '../../configs/env';
 import { ZOD_ERROR_CODES, ZOD_ERROR_MESSAGES } from '../../lib/constants';
 import { createApp } from '../../lib/create-app';
-import { env } from '../../lib/env';
 import { tasksRouter } from './tasks.index';
 
 if (env.NODE_ENV !== 'test') {

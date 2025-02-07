@@ -2,7 +2,7 @@ import { pinoLogger as logger } from 'hono-pino';
 import { pino } from 'pino';
 import pretty from 'pino-pretty';
 
-import { env } from '../lib/env';
+import { env } from '../configs/env';
 
 export function pinoLogger() {
   return logger({

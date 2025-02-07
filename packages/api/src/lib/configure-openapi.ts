@@ -1,8 +1,8 @@
 import { apiReference } from '@scalar/hono-api-reference';
 
 import packageJSON from '../../package.json' with { type: 'json' };
+import { env } from '../configs/env';
 import { type AppOpenAPI } from '../types';
-import { env } from './env';
 
 const isProduction = env.NODE_ENV === 'production';
 
