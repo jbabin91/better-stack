@@ -6,7 +6,6 @@ import { Button, ModeToggle } from '@repo/ui';
 import { queryOptions, useQuery } from '@tanstack/react-query';
 import { createFileRoute } from '@tanstack/react-router';
 import reactLogo from '@web/assets/react.svg';
-import { env } from '@web/configs/env';
 import { apiClient, handleResponse } from '@web/lib/api-client';
 
 import viteLogo from '/vite.svg';
@@ -42,21 +41,10 @@ function useGetMessage() {
   });
 }
 
-// const messageQueryOptions = queryOptions({
-//   queryKey: ['message'],
-//   queryFn:
-// });
-
-// function useMessage() {
-//   return useQuery({});
-// }
-
 const RouteComponent = observer(function RouteComponent() {
   const count = use$(state$.count);
   const doubleCount = use$(state$.doubleCount);
   const { data } = useGetMessage();
-
-  console.log(env);
 
   return (
     <>
