@@ -65,7 +65,7 @@ function configureOpenAPI(app: AppOpenAPI) {
       {
         oas: authRef,
         pathModification: {
-          prepend: '/auth',
+          prepend: isProduction ? '/api/auth' : '/auth',
         },
       },
     ]);
