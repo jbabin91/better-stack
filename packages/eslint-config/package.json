@@ -12,13 +12,13 @@
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
-    "@eslint/js": "^9.19.0",
+    "@eslint/js": "^9.20.0",
     "@repo/typescript-config": "workspace:^",
     "@tanstack/eslint-plugin-query": "^5.66.0",
     "@tanstack/eslint-plugin-router": "^1.99.3",
     "@types/eslint-config-prettier": "^6.11.3",
     "@types/eslint-plugin-jsx-a11y": "^6.10.0",
-    "eslint": "^9.19.0",
+    "eslint": "^9.20.0",
     "eslint-config-prettier": "^10.0.1",
     "eslint-config-turbo": "^2.4.0",
     "eslint-plugin-import-x": "^4.6.1",
