@@ -11,13 +11,28 @@ import { auth } from './auth';
 
 const isProduction = env.NODE_ENV === 'production';
 
+type Module = {
+  description: string;
+  name: string;
+};
+
+const appModulesList: Module[] = [];
+
+const commonModulesList: Module[] = [
+  { description: 'Tasks API', name: 'Tasks' },
+  { description: 'Auth API', name: 'Default' },
+];
+
 function configureOpenAPI(app: AppOpenAPI) {
+  const tags = [...commonModulesList, ...appModulesList];
+
   app.doc31('/openapi', {
     info: {
       title: 'Tasks API',
       version: packageJSON.version,
     },
     openapi: '3.1.0',
+    tags,
   });
 
   app.get('/openapi.json', async (c) => {
@@ -38,7 +53,6 @@ function configureOpenAPI(app: AppOpenAPI) {
         }
         done = isDone;
       }
-      console.log('Full stream content:', result);
     }
 
     const authRef =
@@ -51,7 +65,7 @@ function configureOpenAPI(app: AppOpenAPI) {
       {
         oas: authRef,
         pathModification: {
-          prepend: '/api/auth',
+          prepend: '/auth',
         },
       },
     ]);
@@ -66,7 +80,7 @@ function configureOpenAPI(app: AppOpenAPI) {
     apiReference({
       defaultHttpClient: {
         clientKey: 'fetch',
-        targetKey: 'javascript',
+        targetKey: 'js',
       },
       layout: 'classic',
       servers: [
